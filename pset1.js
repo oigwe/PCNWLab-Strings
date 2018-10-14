@@ -30,6 +30,11 @@ console.log(makeEven("taq"));
     @example - getLastChar('taq'); // 'q'
 */
 
+const getLastChar = (str) => {
+    return str[str.length-1];
+}
+console.log(getLastChar("john"));
+
 /* 3
     @func get3rdChar
     @param {string} str
