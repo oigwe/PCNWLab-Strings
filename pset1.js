@@ -56,7 +56,10 @@ console.log(get3rdChar("susana"));
     @example - get3rdCharFromEnd('mo'); // 'not enough characters!'
     @example - get3rdCharFromEnd('taq karim'); // 'r'
 */
-
+const get3rdCharFromEnd = str => {
+    return str[str.length-3];
+}
+console.log(get3rdCharFromEnd('vincent'));
 /* 5
     @func startsWithVowel
     @param {string} str
