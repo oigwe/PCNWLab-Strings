@@ -43,7 +43,10 @@ console.log(getLastChar("john"));
     @example - get3rdChar('taq'); // 'q'
     @example - get3rdChar('mo'); // 'not enough characters!'
 */
-
+const get3rdChar = str => {
+    return str[2];
+}
+console.log(get3rdChar("susana"));
 /* 4
     @func get3rdCharFromEnd
     @param {string} str
