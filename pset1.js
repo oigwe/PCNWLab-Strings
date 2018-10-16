@@ -19,9 +19,9 @@ const makeEven = (str) => {
     if (str.length % 2 === 0) {
         return str;
     }
-    else return str + "#";
+     return str + "#";
 }
-console.log(makeEven("taq"));
+console.log(makeEven("john"));
 /* 2
     @func getLastChar
     @param {string} str
@@ -31,7 +31,8 @@ console.log(makeEven("taq"));
 */
 
 const getLastChar = (str) => {
-    return str[str.length-1];
+    let lastChar = str.length-1;
+    return str[lastChar];
 }
 console.log(getLastChar("john"));
 
@@ -57,7 +58,8 @@ console.log(get3rdChar("susana"));
     @example - get3rdCharFromEnd('taq karim'); // 'r'
 */
 const get3rdCharFromEnd = str => {
-    return str[str.length-3];
+    let thirdChar = str.length-3;
+    return str[thirdChar];
 }
 console.log(get3rdCharFromEnd('vincent'));
 /* 5
@@ -71,6 +73,36 @@ console.log(get3rdCharFromEnd('vincent'));
     @example - startsWithVowel('Andy'); // true
 */
 
+
+const startsWithVowel = (str) => {
+    let firstChar = str.charAt(0);
+    if ((firstChar === "a")||(firstChar === "A")) {
+        return true;
+    } 
+   else if ((firstChar === "e") || (firstChar === "E")) {
+    return true;
+}
+    else if ((firstChar === "i") || (firstChar === "I")) {
+    return true;
+    }
+    else if ((firstChar === "o") || (firstChar === "O")) {
+        return true;
+    }
+    else if ((firstChar === "u") || (firstChar === "U")) {
+        return true;
+    }
+  return false;
+}
+console.log(startsWithVowel("taq"));
+console.log(startsWithVowel("andy"));
+console.log(startsWithVowel("Andy"));
+console.log(startsWithVowel("elle"));
+console.log(startsWithVowel("umpire"));
+console.log(startsWithVowel("italy"));
+console.log(startsWithVowel("Osita"));
+console.log(startsWithVowel("brad"));
+
+ console.log("-----");
 /* 6
     @func endsWithVowel
     @param {string} str
@@ -81,7 +113,35 @@ console.log(get3rdCharFromEnd('vincent'));
     @example - endsWithVowel('andi'); // true
     @example - endsWithVowel('AndI'); // true
 */
+const endsWithVowel = (str) => {
+    let lastChar = str[str.length-1];
+    if ((lastChar === "a")||(lastChar === "A")) {
+        return true;
+    } 
+   else if ((lastChar === "e") || (lastChar === "E")) {
+    return true;
+}
+    else if ((lastChar === "i") || (lastChar === "I")) {
+    return true;
+    }
+    else if ((lastChar === "o") || (lastChar === "O")) {
+        return true;
+    }
+    else if ((lastChar === "u") || (lastChar === "U")) {
+        return true;
+    }
+  return false;
+}
+console.log(endsWithVowel("taq"));
+console.log(endsWithVowel("andy"));
+console.log(endsWithVowel("Andy"));
+console.log(endsWithVowel("elle"));
+console.log(endsWithVowel("umpire"));
+console.log(endsWithVowel("italy"));
+console.log(endsWithVowel("Osita"));
+console.log(endsWithVowel("brad"));
 
+console.log("-----");
 
 /* 7
     @func hasVowels
@@ -93,7 +153,30 @@ console.log(get3rdCharFromEnd('vincent'));
     @example - hasVowels('dfghjkl'); // false
     @example - hasVowels('taq karim'); // true
 */
-
+ const hasVowels = (str) => {
+    if ((str.includes('a'))||(str.includes('A'))) {
+        return true;
+    } 
+        else if ((str.includes('e'))||(str.includes('E'))) {
+    return true;
+}
+        else if ((str.includes('i'))||(str.includes('I'))) {
+    return true;
+    }
+    else if ((str.includes('o'))||(str.includes('O'))) {
+        return true;
+    }
+    else if ((str.includes('u'))||(str.includes('U'))) {
+        return true;
+    }
+    return false;
+} 
+console.log(hasVowels("tq"));
+console.log(hasVowels("andy"));
+console.log(hasVowels("Andy"));
+console.log(hasVowels("Andy"));
+console.log(hasVowels("brAd"));
+console.log(hasVowels("pLNd"));
 
 /* 8
     @func hasUpperCase
