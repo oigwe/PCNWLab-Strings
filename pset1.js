@@ -32,7 +32,7 @@ console.log(makeEven("john"));
 
 const getLastChar = (str) => {
     let lastChar = str.length-1;
-    return str[lastChar];
+    return str.charAt(lastChar);
 }
 console.log(getLastChar("john"));
 
@@ -45,7 +45,10 @@ console.log(getLastChar("john"));
     @example - get3rdChar('mo'); // 'not enough characters!'
 */
 const get3rdChar = str => {
-    return str[2];
+    if (str.length < 3) {
+        return "not enough characters!"
+    }
+    return str.charAt(2);
 }
 console.log(get3rdChar("susana"));
 /* 4
@@ -58,10 +61,14 @@ console.log(get3rdChar("susana"));
     @example - get3rdCharFromEnd('taq karim'); // 'r'
 */
 const get3rdCharFromEnd = str => {
-    let thirdChar = str.length-3;
-    return str[thirdChar];
+    let thirdChar = str.length - 3; {
+        if (str.length < 3) {
+            return 'not enough characters!';
+        }
+    return str.charAt(thirdChar);
+    }
 }
-console.log(get3rdCharFromEnd('vincent'));
+    console.log(get3rdCharFromEnd('vincent'));
 /* 5
     @func startsWithVowel
     @param {string} str
@@ -177,6 +184,8 @@ console.log(hasVowels("Andy"));
 console.log(hasVowels("Andy"));
 console.log(hasVowels("brAd"));
 console.log(hasVowels("pLNd"));
+console.log("-----");
+
 
 /* 8
     @func hasUpperCase
@@ -188,7 +197,22 @@ console.log(hasVowels("pLNd"));
     @example - hasUpperCase('tag'); // false
     @example - hasUpperCase('taq karim'); // false
 */
+const hasUpperCase = (str) => {
+    let re = /[A-Z]/g;
+    let value = str.search(re);
+    if (value >= 0) {
+        return true;
+    }
+    return false;
+}
 
+console.log(hasUpperCase("tAq"));
+console.log(hasUpperCase("TAQ"));
+console.log(hasUpperCase("taq"));
+console.log(hasUpperCase("taq karim"));
+console.log("-----");
+
+//String.fromCharCode(generateRandNumbemRange(65,90)
 /* 9
     @func isPalindromic
     @param {string} str
@@ -199,6 +223,17 @@ console.log(hasVowels("pLNd"));
     @example - isPalindromic('bats see bees stab'); // false
     @example - hasUpperCase('taq karim'); // false
 */
+const isPalindromic = (str) => {
+   let original = str;
+    let newString = str.split('').reverse().join('');
+    if (original === newString){
+        return true;
+    }
+    return false;
+}
+
+console.log(isPalindromic("key"));
+console.log(isPalindromic("eye"));
 
 /* 10
     @func getInitials
@@ -212,6 +247,18 @@ console.log(hasVowels("pLNd"));
     @example - getInitials('John       Smith'); // "js"
     @example - getInitials('sue RonaN'); // "sr"
 */
+const getInitials = (str) => {
+    str.trim();
+    let value = str.lastIndexOf(" ")+1;
+    console.log(str.charAt(0).toLowerCase(), str.charAt(value).toLowerCase());
+}
+
+console.log(getInitials('taq karim'));
+console.log(getInitials('mo    mosayed'));
+console.log(getInitials('John       Smith'));
+console.log(getInitials('sue RonaN'));
+
+
 
 /* 11
     @func isPerfectStr
@@ -227,7 +274,14 @@ console.log(hasVowels("pLNd"));
     @example - isPerfectStr('asdfaeKeccc'); // false
     @example - isPerfectStr('asdfaeKeccccc'); // true
 */
-
+const isPerfectStr = (str) => {
+    if (str.length < 4){
+        return false;
+        }
+    if (str.length % 2 ===1){
+        Math.ceil(str.length/2) === 
+    }
+}
 /* 12
     @func strMasher
     @param {string} str1
@@ -238,4 +292,26 @@ console.log(hasVowels("pLNd"));
     @example - strMasher('help', 'me'); // "hemelp"
     @example - capitalLast('hello', 'wrold'); // "helwroldlo"
 */
+/*console.log("help".split(''));
+const strMasher = (str1, str2) => {
+    let middleIndex = Math.floor(str1.length/2);
+    let firstHalf = str1.split(middleIndex);
+    return strMasher;
+}
+console.log(strMasher("help", "me"));
+*/
 
+const strMasher = (str1, str2) => {
+    let middleIndex = Math.ceil(str1.length/2);
+    const firstHalf = str1.slice(0, middleIndex);
+    const secondHalf = str1.slice(middleIndex);
+
+    return firstHalf + str2 + secondHalf;
+}
+console.log(strMasher("help", "me"));
+console.log(strMasher("hello", "wrold"));
+
+const name1 = "Mo";
+let names = [name1, "Taq"];
+const firstElement = names[0];  // this is a string 
+console.log("first letter of first element", names[0][0]); // M
